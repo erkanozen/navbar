@@ -1,0 +1,19 @@
+.local-switcher-container {
+  cursor: pointer;
+  // margin-left: 88.66px;
+
+  .language {
+    display: flex;
+    border: none;
+    outline: none;
+    color: var(--Brand-Blue-base, #142239);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+
+    option {
+        margin-top: 70px !important;
+    }
+  }
+}

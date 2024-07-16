@@ -1,0 +1,33 @@
+.percentage-container {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 18px;
+  left: 64px;
+  right: 64px;
+  bottom: -320px;
+  z-index: 1;
+}
+
+.percentage-head {
+  flex: 1 1 calc(20% - 20px);
+  max-width: 314px;
+  width: 314.5px;
+  height: 188px;
+  border: 1px solid gray;
+  border-radius: 16px;
+  padding: 32px 36px;
+  background-color: #fff;
+
+  &__title {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 600;
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "Navbar": {
+    "Home": "Home",
+    "OurServices": "OurServices",
+    "Products": "Products",
+    "OurReferences": "OurReferences",
+    "AboutUs": "AboutUs",
+    "Blog": "Blog",
+    "Career": "Career",
+    "ContactUs": "Contact Us"
+  }
+}
