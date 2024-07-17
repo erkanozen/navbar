@@ -3,15 +3,18 @@
   display: flex;
   flex-wrap: wrap;
   column-gap: 18px;
+  row-gap: 18px;
   left: 64px;
   right: 64px;
-  bottom: -320px;
+  top: 863px;
+  // bottom: -320px;
   z-index: 1;
 }
 
 .percentage-head {
-  flex: 1 1 calc(20% - 20px);
-  max-width: 314px;
+  // flex: 1 1 calc(20% - 20px);
+  // max-width: 314px;
+  flex: 1;
   width: 314.5px;
   height: 188px;
   border: 1px solid gray;
@@ -29,5 +32,40 @@
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
+  }
+}
+
+@media (max-width: 1000px) {
+  .percentage-head {
+   padding: 10px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .percentage-container {
+    top: 770px;
+  }
+  .percentage-head .percentage-head__title {
+    font-size: 20px;
+  }
+  .percentage-head .percentage-head__description {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  .percentage-container {
+    flex-direction: column;
+    top: 780px;
+    row-gap: 10px;
+
+    .percentage-head {
+      text-align: center;
+      padding: 0;
+
+      &__description {
+        font-size: 10px;
+      }
+    }
   }
 }

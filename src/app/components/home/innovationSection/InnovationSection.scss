@@ -1,0 +1,76 @@
+.innovation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 600px;
+  background-image: url("/Union.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: white;
+  padding-top: 80px;
+  row-gap: 30px;
+}
+
+.innovation-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 44px;
+  }
+
+  &__description {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 44px;
+  }
+}
+
+.innovation-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 42px;
+  }
+}
+
+.hakkımızda {
+  color: red;
+  font-size: 24px;
+  border: 2px solid #e64125;
+  padding: 8px 18px 8px 18px;
+  width: 316px;
+  height: 56px;
+  text-align: center;
+  border-radius: 28px;
+  background-color: white;
+
+  a {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .innovation-head .innovation-head__title {
+    font-size: 30px;
+  }
+  .innovation-head .innovation-head__description {
+    font-size: 13px;
+  }
+  .innovation-middle .innovation-middle__description {
+    font-size: 13px;
+  }
+}

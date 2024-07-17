@@ -83,12 +83,7 @@ const Navbar = () => {
   return (
     <div className={`navbar-container ${isScrolled ? "scrolled" : ""}`}>
       <Link href="/" className="navbar-left">
-        <Image
-          src="/pointoLogo.png"
-          width={94.39}
-          height={34}
-          alt="Picture of the author"
-        />
+        <Image src="/pointoLogo.png" width={94.39} height={34} alt="" />
         {/* <img src="/pointoLogo.png" alt="" /> */}
       </Link>
       <div className={`navbar-middle ${menuOpen ? "open" : ""}`}>
@@ -107,11 +102,17 @@ const Navbar = () => {
                 {t(link.label)}
                 {/* {link.label} */}
                 {link.showIcon && (
-                  <img
-                    className="chevron-down"
+                  <Image
                     src="/chevron-down.svg"
+                    width={20}
+                    height={20}
                     alt=""
                   />
+                  // <img
+                  //   className="chevron-down"
+                  //   src="/chevron-down.svg"
+                  //   alt=""
+                  // />
                 )}
               </Link>
 

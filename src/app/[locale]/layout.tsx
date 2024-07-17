@@ -2,8 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import Navbar from "../components/navbar/navbar";
 import "./globals.css";
-import Home from "./page";
-import HomePage from "../home/page";
+import Anasayfa from "../components/home/home";
 
 export default async function LocaleLayout({
   children,
@@ -21,6 +20,7 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
+          <Anasayfa />
           {children}
         </NextIntlClientProvider>
       </body>
