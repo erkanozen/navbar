@@ -33,6 +33,7 @@
 }
 .consultingProcess-navigation {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   column-gap: 40px;
   height: 653px;
@@ -43,10 +44,10 @@
 .sidebar-head {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: start;
+  justify-content: center !important;
   row-gap: 30px;
   height: 524px;
-  width: 480px;
 
   .sidebar-item {
     font-size: 18px;
@@ -58,7 +59,7 @@
   }
 }
 
-.sidebar-item.active {
+.sidebar-item[aria-selected="true"] {
   font-size: 22px;
   font-weight: 500;
   opacity: 1;
@@ -70,28 +71,28 @@
 }
 
 .mySwiper {
-  width: 823.18px;
-  height: 652.72px;
+  // width: 823.18px;
+  // height: 652.72px;
 }
 
 .slide-container {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  .slide-image {
-    width: 822px;
-    height: 426px;
-  }
 }
 
 .slide-info-container {
   display: flex;
   column-gap: 20px;
+  width: 822px;
+  height: 199px;
 }
 
 .slide-info {
   width: 260px;
   height: 199px;
+  // width: 100%;
+  // height: 100%;
   padding: 68px 22px;
   position: relative;
   font-size: 16px;
@@ -103,22 +104,13 @@
   position: absolute;
   top: 24px;
   right: 24px;
-  //  left: 197px;
   font-size: 32px;
   font-weight: 600;
   width: 37px;
   height: 28px;
   opacity: 32%;
 }
-.swiper-scrollbar {
-  //   position: absolute !important;
-  //   top: 0 !important;
-  //   left: 0 !important;
-  width: 4px !important;
-  background-color: white;
-}
 
-.swiper-scrollbar-drag {
-  height: 80px !important;
-  background-color: #0c1628;
+.rt-BaseTabList {
+  box-shadow: none !important;
 }

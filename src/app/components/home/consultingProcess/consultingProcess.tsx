@@ -1,14 +1,11 @@
 "use client";
-import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Mousewheel, Scrollbar } from "swiper/modules";
-import "swiper/scss";
-import "swiper/scss/navigation";
-import "swiper/scss/pagination";
-import "swiper/css/mousewheel";
-import "swiper/css/scrollbar";
+import { Tabs } from "@radix-ui/themes";
 import "./consultingProcess.scss";
+// import "@radix-ui/themes/styles.css";
+
 import Image from "next/image";
+import "@radix-ui/themes/styles.css";
+import TabsComponent from "../../tabs/tabs";
 
 const slidesData = [
   {
@@ -87,21 +84,48 @@ const slidesLabel = [
   "Proje Testlerinin Yapılması",
   "Proje Kontrolü ve Kapanışı",
 ];
+const triggers = (
+  <div className="sidebar-head">
+    {slidesLabel.map((label, index) => (
+      <Tabs.Trigger className="sidebar-item" key={index} value={index}>
+        {label}
+      </Tabs.Trigger>
+    ))}
+  </div>
+);
+const contents = (
+  <div className="mySwiper">
+    {slidesData.map((slide, index) => (
+      <Tabs.Content className="slide-container" value={index} key={index}>
+        <Image
+          className="slide-img"
+          src={slide.img}
+          width={822}
+          height={426}
+          alt=""
+        />
+        <div className="slide-info-container">
+          <div className="slide-info">
+            <div>{slide.description[0]}</div>
+            <span className="number">01</span>
+          </div>
+
+          <div className="slide-info">
+            <div>{slide.description[1]}</div>
+            <span className="number">02</span>
+          </div>
+
+          <div className="slide-info">
+            <div>{slide.description[2]}</div>
+            <span className="number">03</span>
+          </div>
+        </div>
+      </Tabs.Content>
+    ))}
+  </div>
+);
 
 const ConsultingProcess = () => {
-  const swiperRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const handleSlideChange = (swiper) => {
-    setActiveIndex(swiper.activeIndex);
-  };
-
-  const handleItemClick = (index) => {
-    setActiveIndex(index);
-    if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideTo(index);
-    }
-  };
-
   return (
     <div className="consultingProcess-container">
       <div className="consultingProcess-head">
@@ -114,56 +138,12 @@ const ConsultingProcess = () => {
           sunuyoruz.
         </div>
       </div>
-      <div className="consultingProcess-navigation">
-        <div className="sidebar-head">
-          {slidesLabel.map((label, index) => (
-            <div
-              key={index}
-              className={`sidebar-item ${
-                activeIndex === index ? "active" : ""
-              }`}
-              onClick={() => handleItemClick(index)}
-            >
-              {label}
-            </div>
-          ))}
-        </div>
-        <Swiper
-          direction={"vertical"}
-          slidesPerView={1}
-          spaceBetween={0}
-          // speed={900}
-          mousewheel={true}
-          scrollbar={{ draggable: true }}
-          modules={[Pagination, Mousewheel, Scrollbar]}
-          className="mySwiper"
-          onSlideChange={handleSlideChange}
-          initialSlide={activeIndex}
-          ref={swiperRef}
-        >
-          {slidesData.map((slide, index) => (
-            <SwiperSlide key={index}>
-              <div className="slide-container">
-                <Image src={slide.img} width={822} height={426} alt="" />
-                <div className="slide-info-container">
-                  <div className="slide-info">
-                    <div>{slide.description[0]}</div>
-                    <span className="number">01</span>
-                  </div>
-                  <div className="slide-info">
-                    <div>{slide.description[1]}</div>
-                    <span className="number">02</span>
-                  </div>
-                  <div className="slide-info">
-                    <div>{slide.description[2]}</div>
-                    <span className="number">03</span>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+      <TabsComponent
+        tabsRootClassName="consultingProcess-navigation"
+        defaultValue={0}
+        triggers={triggers}
+        contents={contents}
+      />
     </div>
   );
 };
