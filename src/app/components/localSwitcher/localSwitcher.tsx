@@ -1,7 +1,8 @@
 import { ChangeEvent, useTransition } from "react";
-import "./localSwitcher.scss";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
+import "./localSwitcher.scss";
+import Image from "next/image";
 
 const LocalSwitcher = () => {
   const [isPending, startTransition] = useTransition();
@@ -16,31 +17,28 @@ const LocalSwitcher = () => {
   };
 
   return (
-    <div className="local-switcher-container">
-      <select
-        className="language"
-        disabled={isPending}
-        value={localActive}
-        // defaultValue={localActive}
-        onChange={onSelectChange}
-      >
-        {localActive === "tr" ? (
-          <>
-            <option value="tr" disabled hidden>
-              TR
-            </option>
-            <option value="en">EN</option>
-          </>
-        ) : (
-          <>
-            <option value="en" disabled hidden>
-              EN
-            </option>
-            <option value="tr">TR</option>
-          </>
-        )}
-      </select>
-    </div>
+    <select
+      className="language"
+      disabled={isPending}
+      value={localActive}
+      onChange={onSelectChange}
+    >
+      {localActive === "tr" ? (
+        <>
+          <option value="tr" disabled hidden>
+            Tr
+          </option>
+          <option value="en">En</option>
+        </>
+      ) : (
+        <>
+          <option value="en" disabled hidden>
+            En
+          </option>
+          <option value="tr">Tr</option>
+        </>
+      )}
+    </select>
   );
 };
 

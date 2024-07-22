@@ -1,0 +1,124 @@
+.consultingProcess-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  height: 1047px;
+  color: white;
+  background: linear-gradient(
+    270deg,
+    #0c1628 33.33%,
+    #142239 66.66%,
+    #27354b 100%
+  );
+}
+.consultingProcess-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 84px;
+  margin-bottom: 64px;
+  row-gap: 16px;
+
+  &__title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  &__description {
+    text-align: center;
+    width: 800px;
+    line-height: 28px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+.consultingProcess-navigation {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+  height: 653px;
+  margin-left: 64px;
+  margin-right: 64px;
+}
+
+.sidebar-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 30px;
+  height: 524px;
+  width: 480px;
+
+  .sidebar-item {
+    font-size: 18px;
+    font-weight: 400;
+    color: #edf5ff;
+    opacity: 40%;
+    line-height: 30px;
+    cursor: pointer;
+  }
+}
+
+.sidebar-item.active {
+  font-size: 22px;
+  font-weight: 500;
+  opacity: 1;
+  width: 100%;
+  background-color: #0c1628;
+  border-radius: 40px;
+  color: white;
+  padding: 16px 32px 16px 32px;
+}
+
+.mySwiper {
+  width: 823.18px;
+  height: 652.72px;
+}
+
+.slide-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  .slide-image {
+    width: 822px;
+    height: 426px;
+  }
+}
+
+.slide-info-container {
+  display: flex;
+  column-gap: 20px;
+}
+
+.slide-info {
+  width: 260px;
+  height: 199px;
+  padding: 68px 22px;
+  position: relative;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  background-color: #475468;
+}
+.number {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  //  left: 197px;
+  font-size: 32px;
+  font-weight: 600;
+  width: 37px;
+  height: 28px;
+  opacity: 32%;
+}
+.swiper-scrollbar {
+  //   position: absolute !important;
+  //   top: 0 !important;
+  //   left: 0 !important;
+  width: 4px !important;
+  background-color: white;
+}
+
+.swiper-scrollbar-drag {
+  height: 80px !important;
+  background-color: #0c1628;
+}

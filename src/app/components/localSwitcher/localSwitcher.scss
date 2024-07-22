@@ -1,15 +1,22 @@
-.local-switcher-container {
+.language {
+  display: flex;
+  border: none;
+  outline: none;
+  color: var(--Brand-Blue-base, #142239);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  // margin-left: 88.66px;
-
-  .language {
-    display: flex;
-    border: none;
-    outline: none;
-    color: var(--Brand-Blue-base, #142239);
-    font-family: Inter;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-  }
+  width: 40px;
+  height: 22px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  position: relative;
+  border-radius: 0;
+  background-image: url("/chevron-down.svg");
+  background-repeat: no-repeat;
+  background-position: left 20px center;
+  background-size: 20px;
 }

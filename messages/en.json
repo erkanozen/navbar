@@ -8,5 +8,11 @@
     "Blog": "Blog",
     "Career": "Career",
     "ContactUs": "Contact Us"
+  },
+  "Percentage": {
+    "SLA süresi / Hizmet kalitemizin iş kalitesine ve çözüm oranlarına yansıması": "SLA period / Reflection of our service quality on work quality and solution rates",
+    "Projelerimizin zamanında teslim edilme oranı": "On-time delivery rate of our projects",
+    "Müşterilerimizden edindiğimiz memnuniyet oranımız": "Our satisfaction rate from our customers",
+    "2023 Çalışanlarımıza ait Turn over oranı": "Turnover rate of our employees in 2023"
   }
 }

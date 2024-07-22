@@ -20,7 +20,7 @@ const InnovationSection = () => {
             Böylece; verimli, güvenli, hızlı, esnek ve yenilikçi bir reflekse
             dönüşmeleri için
           </div>
-          <div>gerekern teknolojik altyapıyı tamamlıyoruz.</div>
+          <div>gereken teknolojik altyapıyı tamamlıyoruz.</div>
         </div>
       </div>
       <div className="hakkımızda">

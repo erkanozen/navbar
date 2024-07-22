@@ -23,7 +23,7 @@ const HomeSwiper = () => {
         onSlideChange={() => console.log("slide change")}
       >
         <SwiperSlide className="slide slide1">
-          <div className="descrition-container descrition-container1">
+          <div className="description-container description-container1">
             <div className="slide__title">
               <div> Uçtan Uca Danışmanlık</div>
               <div> Hizmeti Veriyoruz</div>
@@ -51,7 +51,7 @@ const HomeSwiper = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="slide slide2">
-          <div className="descrition-container descrition-container2">
+          <div className="description-container description-container2">
             <div className="slide__title">
               <div>Türkiyenin en hızlı büyüyen</div>
               <div>50 öncü şirketten </div>
@@ -71,7 +71,7 @@ const HomeSwiper = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="slide slide3">
-          <div className="descrition-container descrition-container3">
+          <div className="description-container description-container3">
             <div className="slide__title">
               <div>Veritabanı Danışmanlık</div>
               <div> Hizmetimizde</div>
@@ -97,7 +97,7 @@ const HomeSwiper = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="slide slide4">
-          <div className="descrition-container">
+          <div className="description-container">
             <div className="slide__title">
               <div> “Great Place To Work”</div>
               <div> Listesinde Yer Almanın</div>

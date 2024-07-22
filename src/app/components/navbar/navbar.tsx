@@ -12,7 +12,7 @@ import Image from "next/image";
 const navLinks = [
   { href: "/", label: "Home" },
   {
-    href: "/hizmetlerimiz",
+    href: "OurServices",
     label: "OurServices",
     showIcon: true,
     subMenu: [
@@ -32,7 +32,7 @@ const navLinks = [
     ],
   },
   {
-    href: "/urunler",
+    href: "Products",
     label: "Products",
     showIcon: true,
     subMenu: [
@@ -44,10 +44,10 @@ const navLinks = [
       },
     ],
   },
-  { href: "/referanslarimiz", label: "OurReferences" },
-  { href: "/hakkimizda", label: "AboutUs" },
-  { href: "/blog", label: "Blog" },
-  { href: "/kariyer", label: "Career" },
+  { href: "OurReferences", label: "OurReferences" },
+  { href: "AboutUs", label: "AboutUs" },
+  { href: "Blog", label: "Blog" },
+  { href: "Career", label: "Career" },
 ];
 
 const Navbar = () => {
@@ -55,6 +55,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,11 +81,24 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 490);
+      if (!isMobile) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMobile]);
+
   return (
     <div className={`navbar-container ${isScrolled ? "scrolled" : ""}`}>
       <Link href="/" className="navbar-left">
         <Image src="/pointoLogo.png" width={94.39} height={34} alt="" />
-        {/* <img src="/pointoLogo.png" alt="" /> */}
       </Link>
       <div className={`navbar-middle ${menuOpen ? "open" : ""}`}>
         <div className="nav-middle-links">
@@ -96,28 +110,37 @@ const Navbar = () => {
             >
               <Link
                 className="nav-links"
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
+                href={t(link.href)}
+                onClick={(e) => {
+                  if (isMobile) {
+                    // e.preventDefault();
+                    setMenuOpen(true);
+                  }
+                }}
               >
                 {t(link.label)}
-                {/* {link.label} */}
                 {link.showIcon && (
                   <Image
                     src="/chevron-down.svg"
                     width={20}
                     height={20}
                     alt=""
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsMobile(true);
+                      setMenuOpen(true);
+                    }}
                   />
-                  // <img
-                  //   className="chevron-down"
-                  //   src="/chevron-down.svg"
-                  //   alt=""
-                  // />
                 )}
               </Link>
 
               {link.subMenu && (
-                <div className="dropdown-container">
+                <div
+                  className="dropdown-container"
+                  // className={`dropdown-container ${
+                  //   isMobile ? "mobileActive" : ""
+                  // }`}
+                >
                   {link.subMenu.map((subLink) => (
                     <div
                       key={subLink.href}
@@ -139,10 +162,6 @@ const Navbar = () => {
           ))}
         </div>
         <div className="navbar-right">
-          {/* <div className="language-container">
-            <div className="language">Tr</div>
-            <img className="chevron-down" src="/chevron-down.svg" alt="" />
-          </div> */}
           <LocalSwitcher />
           <div className="contact-us">{t("ContactUs")}</div>
         </div>
