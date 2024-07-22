@@ -71,8 +71,12 @@
 }
 
 .mySwiper {
-  // width: 823.18px;
-  // height: 652.72px;
+  width: 823.18px;
+  height: 652.72px;
+}
+.slide-img {
+  width: 100%;
+  height: 100%;
 }
 
 .slide-container {
@@ -91,8 +95,6 @@
 .slide-info {
   width: 260px;
   height: 199px;
-  // width: 100%;
-  // height: 100%;
   padding: 68px 22px;
   position: relative;
   font-size: 16px;
@@ -113,4 +115,113 @@
 
 .rt-BaseTabList {
   box-shadow: none !important;
+}
+@media (max-width: 1350px) {
+  .consultingProcess-navigation {
+    margin: 0 12px;
+  }
+  .consultingProcess-head {
+    margin-bottom: 0;
+  }
+  .slide-info-container {
+    width: 600px;
+  }
+  .slide-img {
+    width: 600px;
+  }
+  .slide-info {
+    font-size: 10px;
+    padding: 24px 14px;
+  }
+  .number {
+    top: 6px;
+    right: 6px;
+    font-size: 24px;
+  }
+  .sidebar-head {
+    .sidebar-item {
+      font-size: 13px !important;
+    }
+  }
+  .sidebar-item[aria-selected="true"] {
+    font-size: 18px !important;
+    padding: 16px 16px 16px 16px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .consultingProcess-navigation {
+    margin: 0 8px;
+  }
+  .consultingProcess-head {
+    margin-bottom: 0;
+  }
+  .slide-info-container {
+    width: 400px;
+  }
+  .slide-img {
+    width: 400px;
+  }
+  .slide-info {
+    font-size: 12px;
+    line-height: 18px;
+    padding: 24px 6px;
+  }
+  .number {
+    top: 4px;
+    right: 0;
+    font-size: 14px;
+  }
+  .sidebar-head {
+    row-gap: 10px;
+    .sidebar-item {
+      font-size: 12px !important;
+    }
+  }
+  .sidebar-item[aria-selected="true"] {
+    font-size: 14px !important;
+    padding: 16px 8px 16px 8px;
+  }
+}
+
+@media (max-width: 800px) {
+  .consultingProcess-head {
+    &__title {
+      font-size: 24px;
+    }
+    &__description {
+      width: 400px;
+      font-size: 10px;
+    }
+  }
+  .consultingProcess-navigation {
+    flex-direction: column;
+    justify-content: space-around;
+    // row-gap: 50px;
+  }
+  .sidebar-head {
+    row-gap: 0;
+    height: 170px;
+
+    .sidebar-item {
+      font-size: 12px !important;
+      width: 100%;
+      line-height: 18px;
+    }
+  }
+  .sidebar-item[aria-selected="true"] {
+    padding: 0;
+    font-size: 8px;
+    padding: 10px;
+  }
+  .slide-info {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 32px 6px;
+  }
+  .number {
+    top: 4px;
+    right: -10px;
+    font-size: 14px;
+  }
 }

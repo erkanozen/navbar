@@ -1,8 +1,6 @@
 "use client";
 import { Tabs } from "@radix-ui/themes";
 import "./consultingProcess.scss";
-// import "@radix-ui/themes/styles.css";
-
 import Image from "next/image";
 import "@radix-ui/themes/styles.css";
 import TabsComponent from "../../tabs/tabs";
@@ -87,14 +85,14 @@ const slidesLabel = [
 const triggers = (
   <div className="sidebar-head">
     {slidesLabel.map((label, index) => (
-      <Tabs.Trigger className="sidebar-item" key={index} value={index}>
+      <Tabs.Trigger key={index} className="sidebar-item" value={index}>
         {label}
       </Tabs.Trigger>
     ))}
   </div>
 );
 const contents = (
-  <div className="mySwiper">
+  <>
     {slidesData.map((slide, index) => (
       <Tabs.Content className="slide-container" value={index} key={index}>
         <Image
@@ -122,7 +120,7 @@ const contents = (
         </div>
       </Tabs.Content>
     ))}
-  </div>
+  </>
 );
 
 const ConsultingProcess = () => {

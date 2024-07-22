@@ -313,6 +313,7 @@
 
 @media (max-width: 1040px) {
   .navbar-container {
+    position: fixed;
     justify-content: space-between;
   }
   .navbar-middle {
