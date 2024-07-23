@@ -1,6 +1,6 @@
 {
   "Navbar": {
-    "Home": "Anasayfa",
+    "/": "Anasayfa",
     "OurServices": "Hizmetlerimiz",
     "Products": "Ürünler",
     "OurReferences": "Referanslarımız",

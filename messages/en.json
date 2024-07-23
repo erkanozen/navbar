@@ -1,6 +1,6 @@
 {
   "Navbar": {
-    "Home": "Home",
+    "/": "Home",
     "OurServices": "OurServices",
     "Products": "Products",
     "OurReferences": "OurReferences",
