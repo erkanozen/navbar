@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { use, useEffect, useState } from "react";
-import "./navbar.scss";
+import styles from "./navbar.module.scss";
 import { usePathname } from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RiCloseLine } from "react-icons/ri";
@@ -94,22 +94,25 @@ const Navbar = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, [isMobile]);
-
   return (
-    <div className={`navbar-container ${isScrolled ? "scrolled" : ""}`}>
-      <Link href="/" className="navbar-left">
+    <div
+      className={`${styles.navbarContainer} ${
+        isScrolled ? styles.scrolled : ""
+      }`}
+    >
+      <Link href="/" className={styles.navbarLeft}>
         <Image src="/pointoLogo.png" width={94.39} height={34} alt="" />
       </Link>
-      <div className={`navbar-middle ${menuOpen ? "open" : ""}`}>
-        <div className="nav-middle-links">
+      <div className={`${styles.navbarMiddle} ${menuOpen ? styles.open : ""}`}>
+        <div className={styles.navMiddleLinks}>
           {navLinks.map((link) => (
             <div
               key={link.href}
-              className={pathname === link.href ? "nav-active" : ""}
-              id="nav-links"
+              className={pathname === link.href ? styles.navActive : ""}
+              id={styles.navLinks}
             >
               <Link
-                className="nav-links"
+                className={styles.navLinks}
                 href={t(link.href)}
                 onClick={(e) => {
                   if (isMobile) {
@@ -121,6 +124,7 @@ const Navbar = () => {
                 {t(link.label)}
                 {link.showIcon && (
                   <Image
+                    className={styles.chevronDown}
                     src="/chevron-down.svg"
                     width={20}
                     height={20}
@@ -135,17 +139,12 @@ const Navbar = () => {
               </Link>
 
               {link.subMenu && (
-                <div
-                  className="dropdown-container"
-                  // className={`dropdown-container ${
-                  //   isMobile ? "mobileActive" : ""
-                  // }`}
-                >
+                <div className={styles.dropdownContainer}>
                   {link.subMenu.map((subLink) => (
                     <div
                       key={subLink.href}
                       className={
-                        pathname === subLink.href ? "sub-nav-active" : ""
+                        pathname === subLink.href ? styles.subNavActive : ""
                       }
                     >
                       <Link
@@ -161,19 +160,19 @@ const Navbar = () => {
             </div>
           ))}
         </div>
-        <div className="navbar-right">
+        <div className={styles.navbarRight}>
           <LocalSwitcher />
-          <div className="contact-us">{t("ContactUs")}</div>
+          <div className={styles.contactUs}>{t("ContactUs")}</div>
         </div>
       </div>
       {menuOpen ? (
         <RiCloseLine
-          className="toggle-icon toggle-close"
+          className={`${styles.toggleIcon} ${styles.toggleClose}`}
           onClick={handleMenuToggle}
         />
       ) : (
         <RxHamburgerMenu
-          className="toggle-icon toggle-open"
+          className={`${styles.toggleIcon} ${styles.toggleOpen}`}
           onClick={handleMenuToggle}
         />
       )}

@@ -1,4 +1,4 @@
-.navbar-container {
+.navbarContainer {
   display: flex;
   position: fixed;
   align-items: center;
@@ -13,54 +13,52 @@
   backdrop-filter: blur(15px);
   z-index: 999;
   transition: width 0.5s ease, border-radius 0.5s ease, margin 0.5s ease;
-
-  &.scrolled {
-    display: flex;
-    width: 100vw;
-    height: 96px;
-    border-radius: 0px 0px 64px 64px;
-    margin: 0;
-  }
-
-  .sub-nav-active {
-    background: rgba(230, 65, 37, 0.16);
-    a {
-      color: var(--Brand-Red-base, #e64125);
-      font-family: Inter;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: -0.14px;
-    }
+}
+.subNavActive {
+  background: rgba(230, 65, 37, 0.16);
+  a {
+    color: var(--Brand-Red-base, #e64125);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.14px;
   }
 }
 
+.scrolled {
+  display: flex;
+  width: 100vw;
+  height: 96px;
+  border-radius: 0px 0px 64px 64px;
+  margin: 0;
+}
 // scrollY > 0 CSS KODLARI Start
-.navbar-container.scrolled .navbar-left {
-  margin-right: 78.23px;
-  margin-left: 70.29px;
+.navbarContainer.scrolled .navbarLeft {
+  margin-right: 78px;
+  margin-left: 70px;
 }
 
-.navbar-container.scrolled .language-container {
-  margin-left: 139.133px;
+.navbarContainer.scrolled .languageContainer {
+  margin-left: 139px;
 }
 // scrollY > 0 CSS KODLARI Finish
 
-.navbar-left {
+.navbarLeft {
   text-decoration: none;
-  margin-left: 67.12px;
-  margin-right: 74.71px;
+  margin-left: 67px;
+  margin-right: 74px;
   margin-top: 31px;
   margin-bottom: 31px;
 }
 
-.navbar-middle {
+.navbarMiddle {
   display: flex;
   align-items: center;
 
   a {
-    color: var(--Brand-Blue-base, #142239);
+    color: #142239 !important;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -83,32 +81,32 @@
     padding: 20px;
     animation: slideInLeft 0.5s ease-in-out;
   }
-  .chevron-down {
+  .chevronDown {
     width: 20px;
     height: 20px;
     cursor: pointer;
   }
-  .nav-links {
+  .navLinks {
     display: flex;
     align-items: center;
   }
 }
-.nav-middle-links {
+.navMiddleLinks {
   display: flex;
   column-gap: 32px;
   width: 789px;
 }
 
-#nav-links {
+#navLinks {
   position: relative;
 }
 
-#nav-links:hover .dropdown-container {
+#navLinks:hover .dropdownContainer {
   opacity: 1;
   visibility: visible;
 }
 
-.dropdown-container {
+.dropdownContainer {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -142,7 +140,7 @@
 
     &:hover {
       background: rgba(230, 65, 37, 0.08);
-      color: var(--Brand-Red-base, #e64125);
+      color: #e64125 !important;
     }
   }
 
@@ -153,7 +151,7 @@
     padding: 16px 28px;
     height: 55px;
     cursor: pointer;
-    color: var(--Brand-Red-base, #e64125);
+    color: #e64125;
     font-family: Inter;
     font-size: 14px;
     font-style: normal;
@@ -163,13 +161,13 @@
   }
 }
 
-.navbar-right {
+.navbarRight {
   display: flex;
   align-items: center;
   column-gap: 16px;
   margin-left: 88.66px;
 
-  .contact-us {
+  .contactUs {
     display: flex;
     width: 144px;
     height: 46px;
@@ -179,8 +177,8 @@
     gap: 6px;
     flex-shrink: 0;
     border-radius: 28px;
-    border: 2px solid var(--Brand-Red-base, #e64125);
-    color: var(--Brand-Red-base, #e64125);
+    border: 2px solid #e64125;
+    color: #e64125;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -191,7 +189,7 @@
   }
 }
 
-.nav-active {
+.navActive {
   position: relative;
   &::after {
     content: "";
@@ -209,25 +207,25 @@
 }
 
 // Responsive nav-menü Css start
-.navbar-middle.open {
+.navbarMiddle.open {
   height: 100vh;
   overflow: auto;
 }
-.navbar-middle.open .navbar-right {
+.navbarMiddle.open .navbarRight {
   margin-left: 0;
   width: 100%;
 }
-.open .nav-active {
+.open .navActive {
   &::after {
     bottom: -6px;
   }
 }
 
-.navbar-middle.open .navbar-right {
+.navbarMiddle.open .navbarRight {
   padding: 10px;
 }
 
-.navbar-middle.open .dropdown-container {
+.navbarMiddle.open .dropdownContainer {
   display: none;
   top: 10px;
   left: 10px;
@@ -235,7 +233,7 @@
   width: 100vw;
 }
 
-.navbar-middle.open #nav-links:hover .dropdown-container {
+.navbarMiddle.open #navLinks:hover .dropdownContainer {
   display: flex;
   position: relative;
 
@@ -246,7 +244,7 @@
   }
 }
 
-.navbar-middle.open .nav-middle-links {
+.navbarMiddle.open .navMiddleLinks {
   display: flex;
   flex-direction: column;
   row-gap: 40px;
@@ -254,31 +252,24 @@
   width: 120px;
 }
 
-.sub-nav-active .dropdown-container {
+.subNavActive .dropdownContainer {
   position: relative;
 }
 
-// .mobileActive .dropdown-container {
-
-//   position: relative;
-//   opacity: 1;
-//   visibility: visible;
-// }
-
 // Responsive nav-menü Css Finish
 
-.toggle-icon {
+.toggleIcon {
   display: none;
   cursor: pointer;
   margin-right: 50px;
   font-size: 24px;
   transition: opacity 0.3s, transform 0.3s ease-in-out;
 
-  &.toggle-open {
+  &.toggleOpen {
     animation: fadeToggle 0.3s forwards;
   }
 
-  &.toggle-close {
+  &.toggleClose {
     animation: fadeToggle 0.3s forwards reverse;
   }
 }
@@ -304,7 +295,7 @@
 }
 
 @media (max-width: 1400px) {
-  .navbar-container {
+  .navbarContainer {
     margin: 0;
     border-radius: 0;
     width: 100%;
@@ -312,14 +303,14 @@
 }
 
 @media (max-width: 1040px) {
-  .navbar-container {
+  .navbarContainer {
     position: fixed;
     justify-content: space-between;
   }
-  .navbar-middle {
+  .navbarMiddle {
     display: none;
   }
-  .toggle-icon {
+  .toggleIcon {
     display: block;
     position: absolute;
     right: 40px;
